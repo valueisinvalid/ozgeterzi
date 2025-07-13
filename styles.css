@@ -11,11 +11,13 @@ body {
   position: fixed;
   bottom: 10px;
   right: 20px;
-  width: 1.2rem;  /* bigger size */
+  width: 120px;
+  max-width: 25vw;  /* bigger size */
   height: auto;
   z-index: 1000;
   cursor: pointer;
   opacity: 0.8;  /* constant opacity */
+  object-fit: contain;
   /* remove hover effect */
 }
 
