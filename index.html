@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My CV</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top-navbar">
+    <div class="navbar-left"><img src="ozgelogo.png" alt="OZGE logo" style="height:1.8rem; display:block;"></div>
+    <nav class="navbar-right">
+        <div class="custom-radio-player">
+            <span class="radio-label">OZGE'S MIND RADIO</span>
+            <button id="play-button" class="play-button">►</button>
+            <audio id="ozge-radio" preload="none">
+              <source src="https://stream-179.zeno.fm/asfdo4axhxhtv?zt=eyJhbGciOiJIUzI1NiJ9.eyJzdHJlYW0iOiJhc2ZkbzRheGh4aHR2IiwiaG9zdCI6InN0cmVhbS0xNzkuemVuby5mbSIsInJ0dGwiOjUsImp0aSI6InRzVVRCOElLUUJTdlRUWUszQWljTnciLCJpYXQiOjE3NTI0MDczMDgsImV4cCI6MTc1MjQwNzM2OH0.C04UcKzV3M_7M8poMJl7emOgvIMDphhtWAWaVTXN5yk" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+          </div>
+          
+</div>
+
+      <!-- No links here --> 
+    </nav>
+  </header>
+  <main class="main-content single-col">
+    <section class="info-box" id="main-section">
+      <div id="about-content">
+        <h1>Melike Özge Terzi</h1>
+        <p>Undergraduate at FMV Işık University, Istanbul Turkey</p>
+        <p>Studying Software Engineering</p>
+        <div class="about-links">
+          <a href="#" id="projects-link">Projects</a> <a href="#" id="contact-link">Contact</a>
+        </div>
+      </div>
+      <div id="projects-content" style="display:none;">
+        <h1>Projects</h1>
+        <ul>
+          
+        </ul>
+        <div class="about-links">
+          <a href="#" id="back-to-about-from-projects">About</a> <a href="#" id="contact-link-from-projects">Contact</a>
+        </div>
+      </div>
+      <div id="contact-content" style="display:none;">
+        <h1>Contact</h1>
+        <p>Email: <a href="mailto:terzimelikeozge@gmail.com">terzimelikeozge@gmail.com</a></p>
+        <p>Linkedin: <a href="https://www.linkedin.com/in/mozgeterzi/">Melike Özge Terzi</a></p>
+        <div class="about-links">
+          <a href="#" id="back-to-about-from-contact">About</a> <a href="#" id="projects-link-from-contact">Projects</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script>
+    // Tab switching logic
+    const aboutContent = document.getElementById('about-content');
+    const projectsContent = document.getElementById('projects-content');
+    const contactContent = document.getElementById('contact-content');
+
+    function showSection(section) {
+      aboutContent.style.display = section === 'about' ? '' : 'none';
+      projectsContent.style.display = section === 'projects' ? '' : 'none';
+      contactContent.style.display = section === 'contact' ? '' : 'none';
+    }
+
+    // Remove About from navbar, so no about-nav event
+    document.getElementById('projects-link').onclick = function(e) {
+      e.preventDefault();
+      showSection('projects');
+    };
+    document.getElementById('contact-link').onclick = function(e) {
+      e.preventDefault();
+      showSection('contact');
+    };
+    document.getElementById('back-to-about-from-projects').onclick = function(e) {
+      e.preventDefault();
+      showSection('about');
+    };
+    document.getElementById('contact-link-from-projects').onclick = function(e) {
+      e.preventDefault();
+      showSection('contact');
+    };
+    document.getElementById('back-to-about-from-contact').onclick = function(e) {
+      e.preventDefault();
+      showSection('about');
+    };
+    document.getElementById('projects-link-from-contact').onclick = function(e) {
+      e.preventDefault();
+      showSection('projects');
+    };
+  </script>
+</body>
+</html> 
